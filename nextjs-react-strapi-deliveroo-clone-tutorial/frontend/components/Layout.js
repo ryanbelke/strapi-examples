@@ -22,7 +22,7 @@ class Layout extends React.Component {
   }
   render() {
     const { isAuthenticated, children } = this.props;
-    const title = "Welcome to Nextjs";
+    const title = "Nextjs + Strapi";
     return (
       <div>
         <Head>
