@@ -38,8 +38,7 @@ const RestaurantList = (
                 <CardImg
                   top={true}
                   style={{ height: 250 }}
-                  src={`https://shrouded-stream-98919.herokuapp.com:1337${res.image.url}`}
-                
+                  src={res.image.url}
                 />
                 <CardBody>
                   <CardTitle>{res.name}</CardTitle>
