@@ -18,8 +18,8 @@
   },
   "scripts": {
     "dev": "node server.js",
-    "build": "./node_modules/next/dist/bin/next build",
-    "heroku-postbuild": "./node_modules/next/dist/bin/next build",
-    "start": "NODE_ENV=production node server.js"
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "heroku-postbuild": "next build"
   }
 }
