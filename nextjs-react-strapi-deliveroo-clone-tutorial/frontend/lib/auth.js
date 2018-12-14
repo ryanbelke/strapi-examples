@@ -13,6 +13,7 @@ export const strapiRegister = (username, email, password) => {
   if (!process.browser) {
     return undefined;
   }
+  console.log("using url " + apiUrl)
   strapi.register(username, email, password).then(res => {
     setToken(res);
   });
