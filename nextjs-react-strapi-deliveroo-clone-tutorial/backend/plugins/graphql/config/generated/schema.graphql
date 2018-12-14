@@ -90,7 +90,7 @@ type Dish {
   name: String
   description: String
   image: UploadFile
-  price: Float
+  price: Int
   restaurant: Restaurant
 }
 
@@ -150,7 +150,7 @@ type DishConnectionName {
 }
 
 type DishConnectionPrice {
-  key: Float
+  key: Int
   connection: DishConnection
 }
 
@@ -179,7 +179,7 @@ input DishInput {
   name: String
   description: String
   image: ID
-  price: Float
+  price: Int
   restaurant: ID
 }
 
@@ -238,7 +238,7 @@ type Order {
   address: String
   city: String
   dishes: String
-  amount: Float
+  amount: Int
 }
 
 type OrderAggregator {
@@ -282,7 +282,7 @@ type OrderConnectionAddress {
 }
 
 type OrderConnectionAmount {
-  key: Float
+  key: Int
   connection: OrderConnection
 }
 
@@ -320,7 +320,7 @@ input OrderInput {
   address: String
   city: String
   dishes: String
-  amount: Float
+  amount: Int
 }
 
 type Query {

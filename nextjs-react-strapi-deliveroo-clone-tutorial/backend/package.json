@@ -20,8 +20,9 @@
   },
   "dependencies": {
     "lodash": "4.x.x",
-    "strapi": "3.0.0-alpha.14.2",
+    "strapi": "^3.0.0-alpha.14.4.0",
     "strapi-hook-mongoose": "3.0.0-alpha.14.2",
+    "strapi-upload-aws-s3": "^3.0.0-alpha.14.4.0",
     "stripe": "^6.12.1"
   },
   "author": {

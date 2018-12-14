@@ -17,12 +17,10 @@
     "strapi-sdk-javascript": "^0.3.0"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "API_URL=http://localhost:1337 node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server.js -p $PORT",
     "heroku-postbuild": "next build"
-  },
-  "engines": {
-    "node": "8.12.x"
   }
+  
 }
