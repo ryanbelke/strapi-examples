@@ -6,6 +6,14 @@ type createDishPayload {
   dish: Dish
 }
 
+input createMarkdownInput {
+  data: MarkdownInput
+}
+
+type createMarkdownPayload {
+  markdown: Markdown
+}
+
 input createOrderInput {
   data: OrderInput
 }
@@ -49,6 +57,14 @@ input deleteDishInput {
 
 type deleteDishPayload {
   dish: Dish
+}
+
+input deleteMarkdownInput {
+  where: InputID
+}
+
+type deleteMarkdownPayload {
+  markdown: Markdown
 }
 
 input deleteOrderInput {
@@ -204,12 +220,63 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+type Markdown {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  markdown: String
+}
+
+type MarkdownAggregator {
+  count: Int
+}
+
+type MarkdownConnection {
+  values: [Markdown]
+  groupBy: MarkdownGroupBy
+  aggregate: MarkdownAggregator
+}
+
+type MarkdownConnection_id {
+  key: ID
+  connection: MarkdownConnection
+}
+
+type MarkdownConnectionCreatedAt {
+  key: DateTime
+  connection: MarkdownConnection
+}
+
+type MarkdownConnectionMarkdown {
+  key: String
+  connection: MarkdownConnection
+}
+
+type MarkdownConnectionUpdatedAt {
+  key: DateTime
+  connection: MarkdownConnection
+}
+
+type MarkdownGroupBy {
+  _id: [MarkdownConnection_id]
+  createdAt: [MarkdownConnectionCreatedAt]
+  updatedAt: [MarkdownConnectionUpdatedAt]
+  markdown: [MarkdownConnectionMarkdown]
+}
+
+input MarkdownInput {
+  markdown: String
+}
+
+union Morph = Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Markdown | createMarkdownPayload | updateMarkdownPayload | deleteMarkdownPayload | MarkdownConnection | MarkdownAggregator | MarkdownGroupBy | MarkdownConnection_id | MarkdownConnectionCreatedAt | MarkdownConnectionUpdatedAt | MarkdownConnectionMarkdown | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
   createDish(input: createDishInput): createDishPayload
   updateDish(input: updateDishInput): updateDishPayload
   deleteDish(input: deleteDishInput): deleteDishPayload
+  createMarkdown(input: createMarkdownInput): createMarkdownPayload
+  updateMarkdown(input: updateMarkdownInput): updateMarkdownPayload
+  deleteMarkdown(input: deleteMarkdownInput): deleteMarkdownPayload
   createOrder(input: createOrderInput): createOrderPayload
   updateOrder(input: updateOrderInput): updateOrderPayload
   deleteOrder(input: deleteOrderInput): deleteOrderPayload
@@ -327,6 +394,9 @@ type Query {
   dish(id: ID!): Dish
   dishes(sort: String, limit: Int, start: Int, where: JSON): [Dish]
   dishesConnection(sort: String, limit: Int, start: Int, where: JSON): DishConnection
+  markdown(id: ID!): Markdown
+  markdowns(sort: String, limit: Int, start: Int, where: JSON): [Markdown]
+  markdownsConnection(sort: String, limit: Int, start: Int, where: JSON): MarkdownConnection
   order(id: ID!): Order
   orders(sort: String, limit: Int, start: Int, where: JSON): [Order]
   ordersConnection(sort: String, limit: Int, start: Int, where: JSON): OrderConnection
@@ -428,6 +498,15 @@ input updateDishInput {
 
 type updateDishPayload {
   dish: Dish
+}
+
+input updateMarkdownInput {
+  where: InputID
+  data: MarkdownInput
+}
+
+type updateMarkdownPayload {
+  markdown: Markdown
 }
 
 input updateOrderInput {

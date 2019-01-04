@@ -1,0 +1,17 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "markdown",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "markdown": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

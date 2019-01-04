@@ -6,7 +6,7 @@ import Strapi from "strapi-sdk-javascript/build/main";
 
 import Router from "next/router";
 
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+const apiUrl = process.env.API_URL || "https://strapi-backend-test.herokuapp.com";
 const strapi = new Strapi(apiUrl);
 
 export const strapiRegister = (username, email, password) => {
@@ -14,6 +14,7 @@ export const strapiRegister = (username, email, password) => {
     return undefined;
   }
   console.log("using url " + apiUrl)
+  console.log("API_URL = " + process.env.API_URL)
   strapi.register(username, email, password).then(res => {
     setToken(res);
   });

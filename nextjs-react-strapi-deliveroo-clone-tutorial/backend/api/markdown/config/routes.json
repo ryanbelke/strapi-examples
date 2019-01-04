@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/markdowns",
+      "handler": "Markdown.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/markdowns/count",
+      "handler": "Markdown.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/markdowns/:_id",
+      "handler": "Markdown.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/markdowns",
+      "handler": "Markdown.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/markdowns/:_id",
+      "handler": "Markdown.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/markdowns/:_id",
+      "handler": "Markdown.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
