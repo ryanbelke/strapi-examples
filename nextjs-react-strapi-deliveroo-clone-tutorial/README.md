@@ -16,18 +16,18 @@ https://blog.strapi.io/strapi-next-setup/
 
 Get ready to develop a **Deliveroo clone, using amazing technologies: [Next.js](https://nextjs.org) ([React](https://reactjs.org)), [GraphQL](https://graphql.org), [Stripe](http://stripe.com/) and [Strapi](https://strapi.io/)**! From signup to order, you are going to let users discover restaurants, dishes and select their happy meal.
 
-![Strapi Next.js tutorial](/content/images/2018/10/Article-Next---1.png)
+![Strapi Next.js tutorial](https://blog.strapi.io/content/images/2018/10/Article-Next---1.png)
 
 The **demo of the final result** should make you hungry:
 
-![Final Walk Through 3](https://blog.strapi.io//content/images/2018/10/ezgif.com-optimize--11-.gif)
+![Final Walk Through 3](https://blog.strapi.io/content/images/2018/10/ezgif.com-optimize--11-.gif)
 
 
 
 # Screenshots of final product:
 ![first](https://blog.strapi.io/content/images/2018/10/Screen-Shot-2018-10-13-at-5.12.41-PM.png)
 ![second](https://blog.strapi.io//content/images/2018/10/Screen-Shot-2018-10-13-at-5.12.58-PM.png)
-![third](https://blog.strapi.io//content/images/2018/10/Screen-Shot-2018-10-13-at-5.13.21-PM.png)
+![third](https://blog.strapi.io/content/images/2018/10/Screen-Shot-2018-10-13-at-5.13.21-PM.png)
 
 ## Strapi:
  [**Strapi** ](https://github.com/strapi/strapi) is the most advanced open-source **Node.js Headless Content Management System** used to build scalable, secure, production ready API's quickly and efficiently saving developers countless hours of development.
